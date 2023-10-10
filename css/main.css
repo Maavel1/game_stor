@@ -57,7 +57,7 @@ a {
 
 .panel_language_cash {
     position: absolute;
-    top: 23px;
+    top: -204px;
     left: 11px;
     background-color: #100D18;
     width: 141px;
@@ -71,6 +71,7 @@ a {
 
 .panel_language_cash.active {
     transition: all 0.2s ease;
+    top: 23px;
     opacity: 1;
     transform: translateY(0);
 }
@@ -808,4 +809,87 @@ label {
     fill: #77BE1D;
     transition: all 0.4s ease;
     fill-opacity: 1;
+}
+
+/* profile */
+
+.data_name {
+    margin-top: 56px;
+}
+
+.form hr {
+    border: 2px solid #77BE1D;
+    width: 83px;
+}
+
+.title_profile {
+    color: #FFF;
+    text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.32);
+    font-size: 37px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0%;
+    text-transform: uppercase;
+    margin-top: 44px;
+    margin-bottom: 44px;
+}
+
+.block_data {
+    display: flex;
+    justify-content: space-between;
+    max-width: 414px;
+    align-items: center;
+}
+
+.name_chel h2 {
+    color: #FFF;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.avatar img {
+    border-radius: 50%;
+}
+
+
+.logout {
+    background-color: #1DBE53;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.info_chel {
+    margin-left: 40px;
+}
+
+.title_order_history {
+    color: #FFF;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 118.3%;
+    text-transform: uppercase;
+}
+
+.block_hisotory{
+    background-color: #1dbe53;
+    text-align: center;
+    width: 100%;
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.block_hisotory  a{
+    color: white;
+    font-size: 27px;
+}
+
+@media (max-width:1100px) {
+    .header {
+        display: none;
+        transform: scale(0.8);
+    }
 }

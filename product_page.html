@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Страница товара</title>
+</head>
+<body>
+    <div class="bg_fon_page">
+    <header class="header">
+        <div class="container">
+            <div class="header_inner">
+                <div class="header_top">
+                   <div class="block_language_cash">
+                    <p class="language" id="language"><span id="change">RU </span><span class="dash_color"> / </span><span id="changes"> ₽</span><img src="img/icons/arrow.png" alt="Arrow" class="arrow" id="arrow" height="6px"></p>
+                    <a href="#" class="score_cumulative">Накопительный счет</a>
+                    <div class="panel_language_cash" id="panel_language_cash">
+                        <div class="language_panel">
+                            <p class="ru_language_panel active" id="ru" onclick="rus()">Русский (RU)</p>
+                            <p class="en_language_panel" id="en" onclick="ens()">English (EN)</p>
+                        </div>
+                        <hr>
+                        <div class="cash_panel">
+                            <a href="#" class="dollars" onclick="dollar()" id="dollars">$</a>
+                            <a href="#" class="euros" onclick="euro()" id="euros">€</a>
+                            <a href="#" class="rubls" onclick="rubl()" id="rubls">₽</a>
+                        </div>
+                    </div>
+                   </div>
+                   <nav class="nav">
+                    <a href="#" class="link_nav">Отзывы</a>
+                    <a href="#" class="link_nav">Гарантии</a>
+                    <a href="#" class="link_nav">Как купить</a>
+                    <a href="#" class="link_nav">Накопительная</a>
+                    <a href="#" class="link_nav">Заработай</a>
+                   </nav>
+                   <div class="personal_account">
+                    <a class="link_account" href="index.php">Личный кабинет</a>
+                   </div>
+                </div>
+                <div class="header_bottom">
+                    <div class="logo_header">
+                        <img src="img/icons/logo.svg" alt="logo" class="logo">
+                        <a href="index.html" class="logo_text">Playnchill</a>
+                    </div>
+                    <div class="search_header">
+                        <div class="burger_menu" id="burger_menu">
+                            <span class="burger_span_1" id="span_burger"></span>
+                            <span class="burger_span_2" id="span_burger_2"></span>
+                        </div>
+                        <div class="search_block">
+                            <input class="input_search" type="text" placeholder="Поиск">
+                            <img src="img/icons/Union.png" alt="union" class="search_img">
+                        </div>
+                    </div>
+                    <div class="blokc_service_header">
+                        <a class="free_page" href="#">Бесплатно</a>
+                        <a class="favourites" href="#"><svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.17875 2.47059C4.48377 2.47059 2.47619 4.45541 2.47619 6.69457C2.47619 7.78053 2.9447 8.84477 3.81685 9.64625L13 18.0853L22.1831 9.64625C23.0553 8.84478 23.5238 7.78053 23.5238 6.69457C23.5238 4.45541 21.5162 2.47059 18.8212 2.47059C17.5427 2.47059 16.3349 2.93827 15.4593 3.74289L13.8388 5.23214C13.3648 5.66772 12.6352 5.66772 12.1612 5.23214L10.5407 3.7429C9.66509 2.93828 8.45731 2.47059 7.17875 2.47059ZM0 6.69457C0 2.90358 3.31187 0 7.17875 0C9.05132 0 10.8656 0.682659 12.2182 1.92567L13 2.6441L13.7818 1.92566C15.1344 0.682658 16.9487 0 18.8212 0C22.6881 0 26 2.90358 26 6.69457C26 8.5044 25.2167 10.2173 23.8607 11.4635L13.8388 20.6733C13.3648 21.1089 12.6352 21.1089 12.1612 20.6733L2.13929 11.4635C0.783262 10.2173 0 8.5044 0 6.69457Z" fill="#CDCDCF"/>
+                            </svg></a>
+                        <a class="basket" href="#"><svg width="24" height="26" viewBox="0 0 24 26" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path  fill-rule="evenodd" clip-rule="evenodd" d="M2.65953 2.80857L0 2.56419L0.22549 0.200012L4.49329 0.592183L5.59618 4.0918L24 5.78294L23.164 14.5485L7.19617 17.2039L2.65953 2.80857ZM6.37019 6.54782L8.88113 14.5154L20.9285 12.5119L21.3659 7.92579L6.37019 6.54782Z" fill="white"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7707 22.8255C19.1047 22.8255 19.3755 22.5597 19.3755 22.2319C19.3755 21.904 19.1047 21.6382 18.7707 21.6382C18.4367 21.6382 18.1659 21.904 18.1659 22.2319C18.1659 22.5597 18.4367 22.8255 18.7707 22.8255ZM18.7707 25.2C20.4408 25.2 21.7947 23.8711 21.7947 22.2319C21.7947 20.5926 20.4408 19.2637 18.7707 19.2637C17.1006 19.2637 15.7468 20.5926 15.7468 22.2319C15.7468 23.8711 17.1006 25.2 18.7707 25.2Z" fill="white"/>
+                            <path  fill-rule="evenodd" clip-rule="evenodd" d="M9.09413 22.8255C9.42814 22.8255 9.69891 22.5597 9.69891 22.2319C9.69891 21.904 9.42814 21.6382 9.09413 21.6382C8.76011 21.6382 8.48934 21.904 8.48934 22.2319C8.48934 22.5597 8.76011 22.8255 9.09413 22.8255ZM9.09413 25.2C10.7642 25.2 12.1181 23.8711 12.1181 22.2319C12.1181 20.5926 10.7642 19.2637 9.09413 19.2637C7.42405 19.2637 6.07019 20.5926 6.07019 22.2319C6.07019 23.8711 7.42405 25.2 9.09413 25.2Z" fill="white"/>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="block_info_game">
+                <div class="img_game">
+                    <img src="img/obl_game_page.png" alt="">
+                </div>
+                <div class="info_game">
+                    <div class="title_game">
+                        Купить Squad
+                        <div class="availability">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                                <circle cx="4" cy="4" r="4" fill="#01CB62"/>
+                                </svg>
+                            <p>В наличии</p>
+                        </div>
+                    </div>
+                    <div class="price_game_page">
+                        <p class="active_price">4 999 Р</p>
+                        <p class="dicont_price">-45%</p>
+                        <p class="old_price">6 999 Р</p>
+                    </div>
+                    <div class="btn_page">
+                        <div class="bosket_block">
+                            <a href="#" class="btn_bosket">Купить</a>
+                        </div>
+                        <div class="active_basket_block">
+                            <a href="#" class="btn__active_bosket">В корзину</a>
+                        </div>
+                        <div class="fovorits_block">
+                            <svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.17875 2.47059C4.48377 2.47059 2.47619 4.45541 2.47619 6.69457C2.47619 7.78053 2.9447 8.84477 3.81685 9.64625L13 18.0853L22.1831 9.64625C23.0553 8.84478 23.5238 7.78053 23.5238 6.69457C23.5238 4.45541 21.5162 2.47059 18.8212 2.47059C17.5427 2.47059 16.3349 2.93827 15.4593 3.74289L13.8388 5.23214C13.3648 5.66772 12.6352 5.66772 12.1612 5.23214L10.5407 3.7429C9.66509 2.93828 8.45731 2.47059 7.17875 2.47059ZM0 6.69457C0 2.90358 3.31187 0 7.17875 0C9.05132 0 10.8656 0.682659 12.2182 1.92567L13 2.6441L13.7818 1.92566C15.1344 0.682658 16.9487 0 18.8212 0C22.6881 0 26 2.90358 26 6.69457C26 8.5044 25.2167 10.2173 23.8607 11.4635L13.8388 20.6733C13.3648 21.1089 12.6352 21.1089 12.1612 20.6733L2.13929 11.4635C0.783262 10.2173 0 8.5044 0 6.69457Z" fill="#CDCDCF"></path>
+                                </svg>
+                        </div>
+                    </div>
+                    <div class="description_game_page">
+                        <div class="description_block">
+                            <p class="title_decr_block">Жанр</p>
+                            <p class="decr_game_page">Гонки</p>
+                        </div>
+
+                        <div class="description_block">
+                            <p class="title_decr_block">Платформа</p>
+                            <p class="decr_game_page">Steam</p>
+                        </div>
+
+                        <div class="description_block">
+                            <p class="title_decr_block">Регион активации</p>
+                            <p class="decr_game_page">Страны СНГ</p>
+                        </div>
+
+                        <div class="description_block">
+                            <p class="title_decr_block">Тип товара</p>
+                            <p class="decr_game_page">Учетная запись</p>
+                        </div>
+
+                    </div>
+                    <div class="quality_page">
+                        <div class="block_delivery">
+                            <p>Моментальная доставка</p>
+                        </div>
+                        <div class="quality_block">
+                            <img src="img/quality.png" alt="">
+                            <p>Гарантия качества</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="block_sliders_img_game">
+      <div class="container">
+       <div class="rows_img_game">
+        <img src="img/img_cart_game1.png" alt="">
+        <img src="img/img_cart_game2.png" alt="">
+        <img src="img/img_cart_game3.png" alt="">
+       <div class="video_block">
+        <div class="video__overlay js-video-btn"></div>
+          <video class="js-video" width="297" height="167"poster="img/poster.png" >
+            <source src="img/video/Need for Speed™ Heat Official Launch Trailer.mp4" type="video/mp4" >
+        </video>
+    
+       </div>
+
+        <!-- <video width="297" height="167" controls>
+            <source src="img/video/Need for Speed™ Heat Official Launch Trailer.mp4" type="video/mp4" poster="img/poster.png">
+        </video> -->
+       </div>
+      </div>
+    </div>
+</div>
+    <div class="block_decr_game_">
+        <div class="container">
+            <div class="block_targer">
+                <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
+                <label for="tab-btn-1">Описание товара</label>
+                <input type="radio" name="tab-btn" id="tab-btn-2" value="">
+                <label for="tab-btn-2">Системные требования</label>
+      
+
+         <div id="content-1">
+            <p class="title_decr_content">Полное погружение в Тамриэль</p>
+            <p class="description_content">Признайтесь, вы ведь тоже сразу после анонса нового поколения VR-шлемов захотели увидеть на них TES V? Тодд Говард вот точно захотел и, как это обычно бывает, воплотил желание в жизнь. Очередной Skyrim предлагает написать историю Довакина по-новому — буквально его же руками. Игра поддерживает все современные устройства (Oculus Rift, HTC Vive, Windows Mixed Reality, Valve Index) и не требует дополнительных настроек: просто жмите «Новая игра» и размещайтесь поудобнее в стартовой телеге. Стрельба из лука, поединки на мечах, колдовство — всё здесь осуществляется при помощи «ручных» контроллеров, но это лишь самые базовые удобства. Bethesda переработала меню, инвентарь и панель быстрого доступа, чтобы обеспечить действительно невиданный игровой опыт. Всё это — с полным набором дополнений и, разумеется, возможностью ставить моды. Путешествия по Скайриму никогда не были такими иммерсивными!</p>
+          </div>
+          <div id="content-2">
+           <p class="configaration">
+            OC:
+           </p>
+           <p class="configaration">
+            Процессор:
+           </p>
+           <p class="configaration">
+            Видеокарта:
+           </p>
+           <p class="configaration">
+            Оперативная память:
+           </p>
+           <p class="configaration">
+            DirectX:
+           </p>
+           <p class="configaration">
+            Место на диске:
+           </p>
+           <p class="configaration">
+            Дополнительно:
+           </p>
+          </div>
+            </div>
+    </div>
+    </div>
+    <div class="block_interes">
+        <div class="container">
+            <p class="title_interes">Вам будет интересно</p>
+            <div class="block_card_game_setka">
+
+                <div class="cards_gaem_top">
+                   <div class="img_game_top_btn">
+                    <a href="product_page.html"><img src="img/nov_game_img.png" height="400px" alt=""></a>
+                    <button class="btn_game_top">В корзину</button>
+                    <svg class="fovurits_game_top_pos" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                    width="25px" height="20px" viewBox="0 0 512.000000 512.000000"
+                    preserveAspectRatio="xMidYMid meet">
+                   
+                   <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                   fill="#000000" stroke="none">
+                   <path class="path_fovurits_game_top" id="path_fovurits_game_top_id" d="M1175 4806 c-208 -31 -377 -96 -560 -215 -102 -66 -280 -247 -355
+                   -361 -267 -408 -332 -927 -173 -1400 95 -283 278 -563 584 -896 226 -246 438
+                   -439 1286 -1166 561 -483 556 -479 637 -464 19 4 49 19 68 34 69 55 1039 891
+                   1208 1041 584 517 880 857 1064 1220 147 290 205 583 178 889 -36 390 -173
+                   696 -426 947 -177 176 -371 287 -601 344 -369 91 -738 24 -1038 -190 -161
+                   -114 -339 -312 -443 -491 -21 -37 -41 -68 -44 -68 -3 0 -23 31 -44 68 -104
+                   179 -282 377 -443 491 -90 64 -228 136 -318 166 -168 56 -405 77 -580 51z"/>
+                   </g>
+                   </svg>
+                   </div>
+                   <div class="block_name_card_top_container">
+                    <div class="block_price_card_top">
+                        <p class="price_card_top">16 400 ₽</p>
+                        <p class="prozent_card_top">-15%</p>
+                        <p class="discont_price_card_top">12 400 ₽</p>
+                    </div>
+                    <div class="block_name_card_top">Hike</div>
+                    <div class="platform_game">
+                        <p class="bust">Ключ</p>
+                        <p class="origin_game">Аккаунт стим</p>
+                    </div>
+                   </div>
+                </div>
+
+                
+                <div class="cards_gaem_top">
+                    <div class="img_game_top_btn">
+                    <a href="product_page.html"> <img src="img/nov_game_img_2.png" width="300px" height="400px" alt=""></a>
+                     <button class="btn_game_top">В корзину</button>
+                     <svg class="fovurits_game_top_pos" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                     width="25px" height="20px" viewBox="0 0 512.000000 512.000000"
+                     preserveAspectRatio="xMidYMid meet">
+                    
+                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                    fill="#000000" stroke="none">
+                    <path class="path_fovurits_game_top" id="path_fovurits_game_top_id" d="M1175 4806 c-208 -31 -377 -96 -560 -215 -102 -66 -280 -247 -355
+                    -361 -267 -408 -332 -927 -173 -1400 95 -283 278 -563 584 -896 226 -246 438
+                    -439 1286 -1166 561 -483 556 -479 637 -464 19 4 49 19 68 34 69 55 1039 891
+                    1208 1041 584 517 880 857 1064 1220 147 290 205 583 178 889 -36 390 -173
+                    696 -426 947 -177 176 -371 287 -601 344 -369 91 -738 24 -1038 -190 -161
+                    -114 -339 -312 -443 -491 -21 -37 -41 -68 -44 -68 -3 0 -23 31 -44 68 -104
+                    179 -282 377 -443 491 -90 64 -228 136 -318 166 -168 56 -405 77 -580 51z"/>
+                    </g>
+                    </svg>
+                    </div>
+                    <div class="block_name_card_top_container">
+                     <div class="block_price_card_top">
+                         <p class="price_card_top">14 400 ₽</p>
+                         <p class="prozent_card_top">-15%</p>
+                         <p class="discont_price_card_top">16 400 ₽</p>
+                     </div>
+                     <div class="block_name_card_top">Hohokum</div>
+                     <div class="platform_game">
+                        <p class="bust">Ключ</p>
+                        <p class="origin_game">Аккаунт стим</p>
+                     </div>
+                    </div>
+                 </div>
+
+                 
+                <div class="cards_gaem_top">
+                    <div class="img_game_top_btn">
+                        <a href="product_page.html"><img src="img/nov_game_img_3.png" width="300px" height="400px" alt=""></a>
+                     <button class="btn_game_top">В корзину</button>
+                     <svg class="fovurits_game_top_pos" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                     width="25px" height="20px" viewBox="0 0 512.000000 512.000000"
+                     preserveAspectRatio="xMidYMid meet">
+                    
+                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                    fill="#000000" stroke="none">
+                    <path class="path_fovurits_game_top" id="path_fovurits_game_top_id" d="M1175 4806 c-208 -31 -377 -96 -560 -215 -102 -66 -280 -247 -355
+                    -361 -267 -408 -332 -927 -173 -1400 95 -283 278 -563 584 -896 226 -246 438
+                    -439 1286 -1166 561 -483 556 -479 637 -464 19 4 49 19 68 34 69 55 1039 891
+                    1208 1041 584 517 880 857 1064 1220 147 290 205 583 178 889 -36 390 -173
+                    696 -426 947 -177 176 -371 287 -601 344 -369 91 -738 24 -1038 -190 -161
+                    -114 -339 -312 -443 -491 -21 -37 -41 -68 -44 -68 -3 0 -23 31 -44 68 -104
+                    179 -282 377 -443 491 -90 64 -228 136 -318 166 -168 56 -405 77 -580 51z"/>
+                    </g>
+                    </svg>
+                    </div>
+                    <div class="block_name_card_top_container">
+                     <div class="block_price_card_top">
+                         <p class="price_card_top">10 000 ₽</p>
+                         <p class="prozent_card_top">-15%</p>
+                         <p class="discont_price_card_top">12 000 ₽</p>
+                     </div>
+                     <div class="block_name_card_top">Ewitne</div>
+                     <div class="platform_game">
+                        <p class="bust">Ключ</p>
+                        <p class="origin_game">Аккаунт стим</p>
+                     </div>
+                    </div>
+                 </div>
+
+                 
+                <div class="cards_gaem_top">
+                    <div class="img_game_top_btn">
+                        <img src="img/nov_game_img_4.png" width="300px" height="400px" alt="">
+                     <button class="btn_game_top">В корзину</button>
+                     <svg class="fovurits_game_top_pos" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                     width="25px" height="20px" viewBox="0 0 512.000000 512.000000"
+                     preserveAspectRatio="xMidYMid meet">
+                    
+                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                    fill="#000000" stroke="none">
+                    <path class="path_fovurits_game_top" id="path_fovurits_game_top_id" d="M1175 4806 c-208 -31 -377 -96 -560 -215 -102 -66 -280 -247 -355
+                    -361 -267 -408 -332 -927 -173 -1400 95 -283 278 -563 584 -896 226 -246 438
+                    -439 1286 -1166 561 -483 556 -479 637 -464 19 4 49 19 68 34 69 55 1039 891
+                    1208 1041 584 517 880 857 1064 1220 147 290 205 583 178 889 -36 390 -173
+                    696 -426 947 -177 176 -371 287 -601 344 -369 91 -738 24 -1038 -190 -161
+                    -114 -339 -312 -443 -491 -21 -37 -41 -68 -44 -68 -3 0 -23 31 -44 68 -104
+                    179 -282 377 -443 491 -90 64 -228 136 -318 166 -168 56 -405 77 -580 51z"/>
+                    </g>
+                    </svg>
+                    </div>
+                    <div class="block_name_card_top_container">
+                     <div class="block_price_card_top">
+                         <p class="price_card_top">20 400 ₽</p>
+                         <p class="prozent_card_top">-15%</p>
+                         <p class="discont_price_card_top">26 400 ₽</p>
+                     </div>
+                     <div class="block_name_card_top">Eastshade</div>
+                     <div class="platform_game">
+                        <p class="bust">Ключ</p>
+                        <p class="origin_game">Аккаунт стим</p>
+                     </div>
+                    </div>
+                 </div>
+
+        </div>
+    </div>
+    </div>
+    <hr class="basket_line">
+    <footer class="footer">
+        <div class="container">
+            <div class="oplata">
+                <img src="img/icons/oplata_footer.png" alt="">
+            </div>
+            <div class="info_footer">
+                <div class="list_info">
+                    <ul>
+                        <li class="title_info_list">О компании</li>
+                        <li class="dectription_info_list"><a href="#">О нас</a></li>
+                        <li class="dectription_info_list"><a href="#">Вакансии</a></li>
+                        <li class="dectription_info_list"><a href="#">Реквизиты</a></li>
+                    </ul>
+                </div>
+                <div class="list_info">
+                    <ul>
+                        <li class="title_info_list">Договор оферты</li>
+                        <li class="dectription_info_list"><a href="#">Каталог</a></li>
+                        <li class="dectription_info_list"><a href="#">Акции</a></li>
+                        <li class="dectription_info_list"><a href="#">Личный кабинет</a></li>
+                    </ul>
+                </div>
+                <div class="list_info">
+                    <ul>
+                        <li class="title_info_list">Договор оферты</li>
+                        <li class="dectription_info_list"><a href="#">Каталог</a></li>
+                        <li class="dectription_info_list"><a href="#">Акции</a></li>
+                        <li class="dectription_info_list"><a href="#">Личный кабинет</a></li>
+                    </ul>
+                </div>
+                <div class="verified">
+                    <div class="block_verified_info">
+                        <img src="img/icons/Subtract.png" alt="">
+                        <div class="text_verified">
+                            <p>verified</p>
+                            <p class="title_verified">WebMoney</p>
+                        </div>
+                    </div>
+
+                    <div class="block_verified_info">
+                        <img src="img/icons/Google_Safe_Browsing.png" alt="">
+                        <div class="text_verified">
+                            <p>Safe Browsing</p>
+                            <p class="title_verified">Google</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info_keys">
+                <p>Все продаваемые ключи закупаются у официальных дистрибьюторови издателей. В том числе у 1С-СофтКлаб, Бука, Новый Диск и Enaza</p>
+            </div>
+            <hr class="line_footer">
+            <div class="copyright">
+                <div class="copyright_info">
+                    <a href="#">Правовая информация</a>
+                </div>
+                <div class="copyright_playchill">
+                    Интернет-магазин игр «Playnchill» © 2022 </div>
+                    <div class="social_footer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="14" viewBox="0 0 23 14" fill="none">
+                            <path fill-rule="nonzero" clip-rule="evenodd" d="M21.7066 1.58016C21.8603 1.07475 21.7066 0.702637 20.9707 0.702637H18.5409C17.9225 0.702637 17.6374 1.02384 17.4828 1.37836C17.4828 1.37836 16.2471 4.33676 14.4967 6.25842C13.9302 6.81566 13.6728 6.99246 13.3637 6.99246C13.2091 6.99246 12.9768 6.81566 12.9768 6.30933V1.58016C12.9768 0.972928 12.8064 0.702637 12.2918 0.702637H8.47067C8.08467 0.702637 7.85233 0.984036 7.85233 1.25155C7.85233 1.82638 8.728 1.95968 8.81779 3.57772V7.09336C8.81779 7.86443 8.67616 8.0042 8.36699 8.0042C7.54316 8.0042 5.53912 5.03192 4.34965 1.63107C4.11916 0.969225 3.8859 0.702637 3.26478 0.702637H0.833089C0.138848 0.702637 0 1.02384 0 1.37836C0 2.00966 0.823833 5.14578 3.83684 9.29364C5.84551 12.1261 8.67338 13.6618 11.2495 13.6618C12.7944 13.6618 12.9851 13.3212 12.9851 12.7334V10.5923C12.9851 9.91012 13.1313 9.77405 13.621 9.77405C13.982 9.77405 14.5994 9.95178 16.0416 11.3171C17.6893 12.9361 17.9605 13.6618 18.888 13.6618H21.3178C22.0121 13.6618 22.3601 13.3212 22.1602 12.6473C21.9399 11.9771 21.1531 11.0042 20.1098 9.84996C19.5433 9.19274 18.6936 8.48461 18.4353 8.13009C18.0753 7.67559 18.178 7.47287 18.4353 7.06836C18.4353 7.06836 21.3974 2.97142 21.7057 1.58016H21.7066Z" fill="white"/>
+                            </svg>
+        
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" viewBox="0 0 22 18" fill="none">
+                                    <path d="M21.3021 2.64441C20.5292 2.98691 19.6989 3.21832 18.826 3.32292C19.7266 2.784 20.4005 1.93579 20.7217 0.936581C19.8755 1.4392 18.9494 1.79299 17.9836 1.98257C17.3342 1.28913 16.4739 0.829507 15.5365 0.675059C14.599 0.520612 13.6368 0.679981 12.7993 1.12843C11.9617 1.57687 11.2956 2.2893 10.9044 3.1551C10.5132 4.0209 10.4187 4.99164 10.6358 5.9166C8.92117 5.83051 7.24383 5.38486 5.71261 4.60857C4.18139 3.83227 2.83051 2.74268 1.74764 1.41052C1.37738 2.04922 1.16448 2.78974 1.16448 3.5784C1.16406 4.28837 1.3389 4.98747 1.67348 5.61367C2.00805 6.23986 2.49202 6.77379 3.08243 7.16809C2.39771 7.1463 1.72808 6.96128 1.1293 6.62843V6.68397C1.12923 7.67974 1.47368 8.64486 2.10419 9.41558C2.7347 10.1863 3.61244 10.7151 4.58847 10.9124C3.95327 11.0843 3.28732 11.1096 2.6409 10.9864C2.91628 11.8432 3.45269 12.5924 4.17505 13.1292C4.8974 13.666 5.76953 13.9635 6.66935 13.98C5.14186 15.1791 3.25543 15.8295 1.31351 15.8267C0.969517 15.8268 0.625817 15.8067 0.28418 15.7665C2.25534 17.0339 4.54991 17.7065 6.89335 17.7039C14.8262 17.7039 19.1629 11.1336 19.1629 5.43526C19.1629 5.25013 19.1583 5.06315 19.1499 4.87802C19.9935 4.26799 20.7216 3.51258 21.3002 2.64719L21.3021 2.64441Z" fill="white"/>
+                                    </svg>
+        
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.53514 0.0610932C7.62093 0.0111078 7.96713 0 10.733 0C13.4988 0 13.845 0.0120335 14.9299 0.0610932C16.0148 0.110153 16.7553 0.28325 17.4032 0.534103C18.0818 0.790509 18.6973 1.19132 19.2064 1.70968C19.7248 2.21787 20.1247 2.8325 20.3802 3.51193C20.6319 4.15989 20.8041 4.90042 20.8541 5.98343C20.9041 7.07108 20.9152 7.41727 20.9152 10.1822C20.9152 12.9481 20.9032 13.2943 20.8541 14.38C20.805 15.4631 20.6319 16.2036 20.3802 16.8515C20.1247 17.5311 19.7241 18.1467 19.2064 18.6556C18.6973 19.174 18.0818 19.5739 17.4032 19.8294C16.7553 20.0812 16.0148 20.2533 14.9318 20.3033C13.845 20.3533 13.4988 20.3644 10.733 20.3644C7.96713 20.3644 7.62093 20.3524 6.53514 20.3033C5.45212 20.2542 4.7116 20.0812 4.06364 19.8294C3.38414 19.5739 2.76848 19.1733 2.25954 18.6556C1.74152 18.1472 1.34066 17.5318 1.08488 16.8525C0.834032 16.2045 0.66186 15.464 0.611874 14.381C0.561889 13.2933 0.550781 12.9471 0.550781 10.1822C0.550781 7.41635 0.562815 7.07015 0.611874 5.98528C0.660934 4.90042 0.834032 4.15989 1.08488 3.51193C1.34103 2.83258 1.74221 2.21723 2.26047 1.70876C2.76869 1.19086 3.38372 0.789994 4.06272 0.534103C4.71067 0.28325 5.4512 0.111079 6.53421 0.0610932H6.53514ZM14.8475 1.89389C13.7738 1.84483 13.4516 1.83465 10.733 1.83465C8.01433 1.83465 7.69221 1.84483 6.61845 1.89389C5.62522 1.93925 5.08649 2.10494 4.72733 2.24471C4.25247 2.42984 3.91276 2.64922 3.55638 3.0056C3.21856 3.33426 2.95858 3.73435 2.79549 4.17655C2.65572 4.53571 2.49003 5.07444 2.44467 6.06767C2.39561 7.14143 2.38543 7.46355 2.38543 10.1822C2.38543 12.9008 2.39561 13.223 2.44467 14.2967C2.49003 15.29 2.65572 15.8287 2.79549 16.1878C2.95841 16.6294 3.21852 17.0302 3.55638 17.3588C3.88499 17.6967 4.2858 17.9568 4.72733 18.1197C5.08649 18.2595 5.62522 18.4252 6.61845 18.4705C7.69221 18.5196 8.01341 18.5298 10.733 18.5298C13.4526 18.5298 13.7738 18.5196 14.8475 18.4705C15.8407 18.4252 16.3795 18.2595 16.7386 18.1197C17.2135 17.9346 17.5532 17.7152 17.9096 17.3588C18.2474 17.0302 18.5076 16.6294 18.6705 16.1878C18.8102 15.8287 18.9759 15.29 19.0213 14.2967C19.0704 13.223 19.0805 12.9008 19.0805 10.1822C19.0805 7.46355 19.0704 7.14143 19.0213 6.06767C18.9759 5.07444 18.8102 4.53571 18.6705 4.17655C18.4853 3.70169 18.266 3.36198 17.9096 3.0056C17.5809 2.6678 17.1808 2.40782 16.7386 2.24471C16.3795 2.10494 15.8407 1.93925 14.8475 1.89389ZM9.43244 13.3211C10.1588 13.6234 10.9675 13.6643 11.7206 13.4365C12.4737 13.2088 13.1243 12.7267 13.5614 12.0726C13.9985 11.4185 14.195 10.6329 14.1172 9.84999C14.0395 9.0671 13.6923 8.33549 13.1351 7.78013C12.7798 7.42512 12.3503 7.15329 11.8774 6.9842C11.4045 6.81512 10.9 6.75298 10.4002 6.80228C9.90041 6.85158 9.41777 7.01107 8.98702 7.26929C8.55626 7.5275 8.18812 7.87801 7.90909 8.29558C7.63006 8.71315 7.44708 9.18739 7.37333 9.68416C7.29958 10.1809 7.3369 10.6879 7.48258 11.1685C7.62827 11.6491 7.87871 12.0915 8.21587 12.4637C8.55303 12.8359 8.96852 13.1287 9.43244 13.3211ZM7.03222 6.48143C7.51821 5.99544 8.09516 5.60993 8.73014 5.34692C9.36512 5.0839 10.0457 4.94853 10.733 4.94853C11.4203 4.94853 12.1008 5.0839 12.7358 5.34692C13.3708 5.60993 13.9478 5.99544 14.4338 6.48143C14.9197 6.96743 15.3053 7.54438 15.5683 8.17936C15.8313 8.81434 15.9667 9.49491 15.9667 10.1822C15.9667 10.8695 15.8313 11.5501 15.5683 12.185C15.3053 12.82 14.9197 13.397 14.4338 13.883C13.4522 14.8645 12.121 15.4159 10.733 15.4159C9.34492 15.4159 8.01372 14.8645 7.03222 13.883C6.05071 12.9015 5.49931 11.5703 5.49931 10.1822C5.49931 8.79414 6.05071 7.46294 7.03222 6.48143ZM17.1274 5.72795C17.2478 5.61434 17.3442 5.47773 17.4109 5.32619C17.4776 5.17466 17.5132 5.01128 17.5156 4.84574C17.5181 4.68019 17.4872 4.51585 17.425 4.36243C17.3627 4.20902 17.2704 4.06965 17.1533 3.95258C17.0362 3.83551 16.8969 3.74312 16.7434 3.68088C16.59 3.61864 16.4257 3.58782 16.2601 3.59023C16.0946 3.59264 15.9312 3.62825 15.7797 3.69493C15.6281 3.76162 15.4915 3.85803 15.3779 3.97846C15.157 4.21268 15.036 4.52379 15.0407 4.84574C15.0454 5.16769 15.1754 5.47514 15.4031 5.70281C15.6307 5.93049 15.9382 6.06047 16.2601 6.06517C16.5821 6.06986 16.8932 5.94889 17.1274 5.72795Z" fill="white"/>
+                                        </svg>
+                                    
+                    </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/counter.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
